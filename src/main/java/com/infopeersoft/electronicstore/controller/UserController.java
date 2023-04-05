@@ -106,7 +106,7 @@ public class UserController {
         UserDto user = this.userService.getUserById(userid);
         user.setImagename(imageName);
         UserDto userDto = this.userService.updateUser(user, userid);
-        ImageResponse imageResponse = ImageResponse.builder().imageName(imageName).success(true).status(HttpStatus.CREATED).build();
+        ImageResponse imageResponse = ImageResponse.builder().imageName(imageName).message("Image upload successfully").success(true).status(HttpStatus.CREATED).build();
         return new ResponseEntity<>(imageResponse,HttpStatus.CREATED);
     }
     //serve user image
