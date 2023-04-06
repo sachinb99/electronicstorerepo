@@ -45,7 +45,7 @@ public class ProductController {
     //get single
     @GetMapping("/{productId}")
     public ResponseEntity<ProductDto> getProduct(@PathVariable Long productId) {
-        log.info("In ProductController class  getProduct method start with id {}:",productId);
+        log.info("In ProductController class  getProduct method start with id :{}",productId);
         ProductDto productDto = this.productService.get(productId);
         log.info("In ProductController class  getProduct method ended");
         return new ResponseEntity<>(productDto, HttpStatus.OK);
